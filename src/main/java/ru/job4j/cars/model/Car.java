@@ -16,9 +16,6 @@ public class Car {
     @OneToOne(mappedBy = "car")
     private Post post;
 
-    public Car() {
-    }
-
     public static Car of(String model, String mark, String body) {
         Car car = new Car();
         car.model = model;
@@ -74,5 +71,15 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{"
+                + "id=" + id
+                + ", model='" + model + '\''
+                + ", mark='" + mark + '\''
+
+                + '}';
     }
 }

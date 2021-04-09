@@ -18,9 +18,6 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Post> posts = new ArrayList<>();
 
-    public User() {
-    }
-
     public static User of(String name, String email, String password) {
         User user = new User();
         user.name = name;

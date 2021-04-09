@@ -12,6 +12,7 @@ public class Post {
     private int id;
     private boolean status;
     private String description;
+    private boolean photo;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date created;
@@ -24,9 +25,6 @@ public class Post {
     @JoinColumn(name = "car_id")
     private Car car;
 
-    public Post() {
-    }
-
     public static Post of(String description, Car car, User user) {
         Post post = new Post();
         post.description = description;
@@ -34,6 +32,7 @@ public class Post {
         post.created = new Date(1000 * (System.currentTimeMillis() / 1000));
         post.car = car;
         post.user = user;
+        post.photo = false;
         return post;
     }
 
@@ -85,6 +84,14 @@ public class Post {
         this.car = car;
     }
 
+    public boolean getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(boolean photo) {
+        this.photo = photo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -102,4 +109,16 @@ public class Post {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+        return "Post{"
+                + "id=" + id
+                + ", status=" + status
+                + ", description='" + description + '\''
+                + ", photo=" + photo
+                + ", created=" + created
+                + ", user=" + user
+                + ", car=" + car
+                + '}';
+    }
 }
