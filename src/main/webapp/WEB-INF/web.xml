@@ -4,4 +4,116 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <filter>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>ru.job4j.cars.filter.AuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+    <servlet>
+    <servlet-name>ShowAllPostsServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.ShowAllPostsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowAllPostsServlet</servlet-name>
+    <url-pattern>/show</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>MarkServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.MarkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MarkServlet</servlet-name>
+    <url-pattern>/marks</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ModelServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.ModelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModelServlet</servlet-name>
+    <url-pattern>/models</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>PostServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.PostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostServlet</servlet-name>
+    <url-pattern>/post.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DownloadServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.DownloadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadServlet</servlet-name>
+    <url-pattern>/download</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.UploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeletePhotoServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.DeletePhotoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeletePhotoServlet</servlet-name>
+    <url-pattern>/delete_photo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PostDeleteServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.PostDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostDeleteServlet</servlet-name>
+    <url-pattern>/delete_post</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>StartServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.StartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StartServlet</servlet-name>
+    <url-pattern>/start</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>ShowMarkServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.ShowMarkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowMarkServlet</servlet-name>
+    <url-pattern>/show_mark</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>AuthServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.AuthServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthServlet</servlet-name>
+    <url-pattern>/auth.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RegServlet</servlet-name>
+    <servlet-class>ru.job4j.cars.servlets.RegServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegServlet</servlet-name>
+    <url-pattern>/reg.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

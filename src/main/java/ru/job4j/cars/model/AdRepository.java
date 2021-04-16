@@ -1,5 +1,6 @@
 package ru.job4j.cars.model;
 
+import java.util.ArrayList;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -33,7 +34,40 @@ public class AdRepository implements AutoCloseable {
             session.close();
         }
     }
-
+    
+    public User addUser(User user) {
+                return this.tx(
+                session -> {
+                   
+                    session.save(user);
+                    return user;
+                }
+        );
+    }
+    
+    public User findByCredential(String email, String password) {
+        return this.tx(
+                session -> {
+                
+                    Query queryObject = session.createQuery(
+                            "from ru.job4j.cars.model.User where "
+                                    + "email" + "= :value1" + " and " + "password" + "= :value2");
+                    queryObject.setParameter("value1", email);
+                    queryObject.setParameter("value2", password);
+                    List<User> list = queryObject.list();
+                     return list.isEmpty() ? null : list.get(0);                  
+                });
+    }
+    
+    public Post add(Post post) {
+        return this.tx(
+                session -> {
+                    session.save(post);
+                    return post;
+                }
+        );
+    }
+    
     public List<Post> showLastDayAds() {
         return tx(session -> {
             java.sql.Date current = new java.sql.Date(new Date().getTime());
@@ -50,12 +84,20 @@ public class AdRepository implements AutoCloseable {
             Date tomorrow = instance.getTime();
             Query query = session.createQuery(
                     "from Post p where p.created >= :date1 AND p.created < :date2");
-            System.out.println(today);
-            System.out.println(tomorrow);
+          
             query.setParameter("date1", today);
             query.setParameter("date2", tomorrow);
 
             return query.list();
+        });
+    }
+
+    public List<Post> showAllAds() {
+        return tx(session -> {
+            Query query = session.createQuery("from Post p where p.status = :stPost");
+            query.setParameter("stPost", false);
+            List<Post> posts = query.list();
+            return posts;
         });
     }
 
@@ -76,6 +118,41 @@ public class AdRepository implements AutoCloseable {
             return posts;
         });
     }
+    
+    public Post findPostById(int id) {
+        return tx(session -> {
+            Query query = session.createQuery("from Post p where p.id = :key");
+            query.setParameter("key", id);
+            List<Post> posts = query.list();
+            return posts.get(0);
+        });
+    }
+    
+    public List<Post> findPostByUser(User user) {
+        return tx(session -> {
+            Query query = session.createQuery("from Post p where p.user = :key");
+            query.setParameter("key", user);
+            return query.list();
+        });
+    }
+
+    public boolean deletePost(String id) {
+        return tx(session -> {
+            Post post = new Post();
+            post.setId(Integer.parseInt(id));
+            session.delete(post);
+            return true;
+        }); 
+    }
+    
+    public List<Trademark> getAllMarks() {
+        return tx(session -> {
+            Query query = session.createQuery("from Trademark");
+            List<Trademark> marks = query.list();
+         
+            return marks;
+        });
+    }
 
     @Override
     public void close() throws Exception {
@@ -84,9 +161,11 @@ public class AdRepository implements AutoCloseable {
 
     public static void main(String[] args) {
         AdRepository rep = new AdRepository();
-        System.out.println(rep.showAdsOfMark("Жигули"));
+        /*System.out.println(rep.showAdsOfMark("Жигули"));
         System.out.println(rep.showAdsWithPhoto());
-        System.out.println(rep.showLastDayAds());
+        System.out.println(rep.showLastDayAds());*/
+        //System.out.println(rep.showAllAds());
+        System.out.println(rep.getAllMarks());
     }
 
 }

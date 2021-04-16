@@ -1,5 +1,6 @@
 package ru.job4j.cars.model;
 
+import java.text.DateFormat;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
