@@ -36,7 +36,7 @@
             }
         }
     </script>
-    <title>регистрация TODO</title>
+    <title>регистрация CARMARKET</title>
     <style type="text/css">
    #main_container {
     position: absolute;   

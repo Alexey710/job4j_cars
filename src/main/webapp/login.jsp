@@ -34,7 +34,7 @@
         }
     </script>
 
-    <title>авторизация TODO</title>
+    <title>авторизация CARMARKET</title>
     <style type="text/css">
    #main_container {
     position: absolute;   

@@ -1,4 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="ru.job4j.cars.model.Post" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Date" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -175,22 +178,21 @@
         </tr>
         </thead>
         <tbody>
-            
             <c:forEach items="${posts}" var="post">
                         <tr>
                             <td>
                                 <img src="<c:url value='/download?name=${post.id}.jpg'/>" width="100px" height="100px"/>
                             </td>
+                         
                             <td>
-                               <c:out value="${post.created}"/>
+                                <c:out value="${post.created}"/>
                             </td>
+                     
                             <td>
                                 <c:out value="${post.description}"/>
-                            </td>
-                            
+                            </td> 
                         </tr>
             </c:forEach>
-   
         </tbody>
     </table>
                            
