@@ -1,15 +1,13 @@
 package ru.job4j.cars.servlets;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.List;
-import ru.job4j.cars.model.AdRepository;
+import ru.job4j.cars.repository.AdRepository;
 import ru.job4j.cars.model.Post;
-import ru.job4j.cars.model.Trademark;
 
 public class MarkServlet extends HttpServlet {
 

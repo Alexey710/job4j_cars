@@ -5,7 +5,6 @@ import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import ru.job4j.cars.model.AdRepository;
+import ru.job4j.cars.repository.AdRepository;
 import ru.job4j.cars.model.User;
 
 public class UploadServlet extends HttpServlet {

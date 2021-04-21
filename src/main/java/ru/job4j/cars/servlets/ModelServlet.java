@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import ru.job4j.cars.model.AdRepository;
+import ru.job4j.cars.repository.AdRepository;
 import ru.job4j.cars.model.Model;
 import ru.job4j.cars.model.Trademark;
 

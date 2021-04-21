@@ -8,8 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ru.job4j.cars.model.AdRepository;
-import ru.job4j.cars.model.Post;
+import ru.job4j.cars.repository.AdRepository;
 import ru.job4j.cars.model.Trademark;
 
 

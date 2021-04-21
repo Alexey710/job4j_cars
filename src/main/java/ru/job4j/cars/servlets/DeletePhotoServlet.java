@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import ru.job4j.cars.model.AdRepository;
+import ru.job4j.cars.repository.AdRepository;
 import ru.job4j.cars.model.User;
 
 public class DeletePhotoServlet extends HttpServlet {

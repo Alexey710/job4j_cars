@@ -2,13 +2,13 @@
 package ru.job4j.cars.servlets;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ru.job4j.cars.model.*;
+import ru.job4j.cars.repository.AdRepository;
 
 public class PostServlet extends HttpServlet {
     @Override

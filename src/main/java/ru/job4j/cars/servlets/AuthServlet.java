@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.List;
-import ru.job4j.cars.model.AdRepository;
+
+import ru.job4j.cars.repository.AdRepository;
 import ru.job4j.cars.model.User;
 
 

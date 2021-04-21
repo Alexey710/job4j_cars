@@ -1,7 +1,7 @@
 
 package ru.job4j.cars.servlets;
 
-import ru.job4j.cars.model.AdRepository;
+import ru.job4j.cars.repository.AdRepository;
 
 
 import javax.servlet.ServletException;
